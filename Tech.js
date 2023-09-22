@@ -1,18 +1,15 @@
-document.getElementById("Tema1").addEventListener("click", function(){
-    document.getElementById("heroinasTema1").style.display="block";
-    document.getElementById("artigosTema2").style.display="none";
-    document.getElementById("recursosTema3").style.display="none";
+function mostrarConteudo(conteudoId) {
+    // Oculta todos os conteúdos relacionados
+    const conteudos = document.querySelectorAll('div[id^="conteudo"]');
+    conteudos.forEach(conteudo => {
+      conteudo.style.display = 'none';
+    });
+  
+    // Mostra o conteúdo correspondente ao item do menu clicado
+    const conteudoParaMostrar = document.getElementById(conteudoId);
+    if (conteudoParaMostrar) {
+      conteudoParaMostrar.style.display = 'block';
+    }
 
-});
-
-document.getElementById("Tema2").addEventListener("click", function(){
-    document.getElementById("heroinasTema1").style.display="none";
-    document.getElementById("artigosTema2").style.display="block";
-    document.getElementById("recursosTema3").style.display="none";
-});
-document.getElementById("Tema3").addEventListener("click", function(){
-    document.getElementById("heroinasTema1").style.display="none";
-    document.getElementById("artigosTema2").style.display="none";
-    document.getElementById("recursosTema3").style.display="block";
-});
-
+  }
+  
